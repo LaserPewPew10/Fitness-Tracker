@@ -1,10 +1,6 @@
 # Fitness-Tracker
 
-
-![image](Asset/Fitness.pdf)
-
-
-![image](Asset/Stats.pdf)
+![Demo](fitness.gif)
 
 
 # Unit 17 Nosql Homework: Workout Tracker
