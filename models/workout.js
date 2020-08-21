@@ -47,12 +47,6 @@ const workoutSchema = new Schema(
   }
 );
 
-// adds a virtual(calculated property) field to the schema
-workoutSchema.virtual("totalWeight").get(function () {
-  // adding the total weight of the exercises together
-  return this.weight * this.reps * this.sets;
-});
-
 // adds a virtual( calculated property) field to schema
 workoutSchema.virtual("totalDuration").get(function () {
   // the reduce method executes a reducer function(that you provide) on each element of the array, resulting in single output value.

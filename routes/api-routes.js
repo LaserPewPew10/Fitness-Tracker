@@ -23,11 +23,23 @@ module.exports = function (app) {
         res.json(err);
       });
   });
-  //retrieve workouts? get
+  //retrieve workouts
   app.get("/api/workouts", (req, res) => {
     //  grabbing it from database
     //  populate properties array
     Workout.find({})
+      .then((dbWorkout) => {
+        res.json(dbWorkout);
+      })
+      .catch((err) => {
+        res.json(err);
+      });
+  });
+
+  // GET stats page
+  app.get("/api/workouts/range", (req, res) => {
+    const start = new Date().setDate(new Date().getDate() - 7);
+    Workout.find({ day: { $gte: start, $lte: Date.now() } })
       .then((dbWorkout) => {
         res.json(dbWorkout);
       })
